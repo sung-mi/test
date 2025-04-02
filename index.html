@@ -22,11 +22,34 @@ function fn_inAppCloseAfter(response, status) {
 	}
 }
 
+function ClosePage(){
+
+var _ua = window.navigator.userAgent || window.navigator.vgjendor || window.opera;
+//alert(_ua.toLocaleLowerCase().indexOf("kakaotalk"))
+if (_ua.toLocaleLowerCase().indexOf("kakaotalk") > -1) {
+  //alert("1")
+  window.location.href = (/iPad|iPhone|iPod/.test(_ua)) ? "kakaoweb://closeBrowser" : "kakaotalk://inappbrowser/close";
+}else if(_ua.toLocaleLowerCase().indexOf("android") > -1){
+  //alert("2")
+  self.close();
+}else if(_ua.toLocaleLowerCase().indexOf("iphone") > -1 
+    || _ua.toLocaleLowerCase().indexOf("ipad") > -1 
+    || _ua.toLocaleLowerCase().indexOf("ipod") > -1){
+  //alert("3")
+  self.close();
+}else{
+  //alert("4")
+  self.close();
+}
+
+}
+
+
   </script>
 </head>
 <body>
   <button onclick="window.open('index.html')">열기</button>
-  <button onclick='location.href = "kakaoweb://closeBrowser;"'>카카오 아이폰 닫기2</button>
+  <button onclick='ClosePage()'>카카오 아이폰 닫기3</button>
   <button onclick='fn_inAppCloseAfter()'>닫기</button>
 
 </body>
