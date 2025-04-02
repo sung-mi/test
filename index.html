@@ -39,7 +39,7 @@ if (_ua.toLocaleLowerCase().indexOf("kakaotalk") > -1) {
   self.close();
 }else{
   //alert("4")
-  self.close();
+  window.open("about:blank","_self").close();	
 }
 
 }
@@ -49,7 +49,6 @@ if (_ua.toLocaleLowerCase().indexOf("kakaotalk") > -1) {
 </head>
 <body>
   <button onclick="window.open('index.html')">열기</button>
-  <button onclick='ClosePage()'>카카오 아이폰 닫기3</button>
   <button onclick='fn_inAppCloseAfter()'>닫기</button>
 
 </body>
